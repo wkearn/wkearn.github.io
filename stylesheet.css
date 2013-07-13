@@ -95,6 +95,15 @@ body {
   padding: 0px 40px 0px 20px;
   color: white;
 }
+
+#content a { 
+  color: white;
+  font-size: 12pt
+  decoration: underline
+} 
+#content a:hover {
+  decoration: underline
+}
 #sidebar {
   background-color: #829bcc;
   float: right;
