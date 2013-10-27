@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>William S. Kearney</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="content">
+	<h2>INSERT TITLE HERE</h2>
+	<hr class="spacer">
+	<div id="text">
+	  Content goes here
+	</div>
+	<div id="clear">
+	</div>
+      </div>
+      <div id="footer">
+	<a href="http://www.bu.edu/tech/about/policies/websites-disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $("#container").prepend($("<div>").load("master.html"));
+    </script>
+  </body>
+</html>
+

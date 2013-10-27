@@ -1,20 +1,21 @@
 #container {
-  border: 40px solid #4a4a4a;
-  margin: 80px auto;
-  width: 1000px;
-  background-color: #4a4a4a;
+  width: 90%;
+  margin: 50px auto;
+  background-color: white;
 }
-#banner a {
-  color: white;
-  font-size: 10pt;
-  text-decoration: none;
-  padding-top: 0;
-  margin-top: 0;
-  padding-left: 5px;
-}
+
 #banner {
   padding-bottom: 20px;
 }
+
+#banner a {
+  color: white;
+  font-size: 14pt;
+  text-decoration: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
 #banner p {
   margin: 0;
   padding: 0;
@@ -24,12 +25,13 @@
   float: left;
 }
 #deptlink {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 #name {
-  font-size: 14pt;
-  font-weight: bolder;
-  color: white;
+  font-size: 32pt;
+  color: black;
+  font-variant: small-caps;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-top: 0px;
@@ -38,84 +40,251 @@
 }
 
 #title {
-  color: white;
-  font-size: 12pt;
+  color: black;
+  font-size: 16pt;
   padding-top: 2px;
   padding-bottom: 2px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 #topblock {
-border:  none;
-margin: 0;
-padding: 0;
-height: 60px;
-width: 1000px;
+    border:  none;
+    margin: 20px;
+    padding: 0;
+    width: 100%;
+    text-align: left;
 }
 
 #nav {
   background-color: #669933;
-  width: 1000px;
+  width: 100%;
   margin-bottom: 20px;
+  margin-right: auto;
 }
+
 #nav ul {
-  margin: 0;
-  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
   list-style-type: none;
   overflow: hidden;
 }
+
 #nav li {
   float: left;
 }
+
 #nav a {
-  border-right: 2px solid #4a4a4a;
+  border-right: 2px solid white;
   display: block;
+  font-variant: small-caps;
+  font-size: 14pt;
   text-align: center;
-  font-weight: bold;
   text-decoration: none;
-  width: 80px;
-  background-color: #669933;
   color: white;
+  padding: 3px 10px;
 }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: georgia,times,"times new roman",serif;
-  color: #000000;
-  background-color: #696969;
+  font-family: ,serif;
+  color: black;
+  background-color: white;
 }
-#content {
-  margin: 0;
-  background-color: #4a4a4a;
-  float: left;
-  width: 750px;
+
+#info {
+    width: 100%;
+}
+
+.content {
+  background-color: white;
   text-align: justify;
+  font-size: 14pt;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 0;
+  padding: 10px 40px 10px 10px;
+  border: 2px solid #000000;
 }
-#content p {
-  padding: 0px 40px 0px 20px;
+
+.content p {
+  padding: 0px 0px 10px 0px;
+  margin: 0;
+}
+
+.content a {
+  text-decoration: underline;
+  font-size: 14pt;
+  color: black;
+} 
+
+.content a:hover {
+  color: blue;
+}
+
+.content h2 {
+    font-variant:small-caps;
+    margin: 0;
+    padding: 0;
+    font-size: 24pt;
+}
+
+.content h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.profile {
+    width: 20%;
+    float: left;
+}
+
+.profile img {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.profile-text {
+    padding: 0px 0px 0px 10px;
+    margin-left: 20%;
+}
+
+.research-left {
+    width: 30%;
+    float: left;
+    margin: 0;
+}
+
+.research-left a {
+    color: white;
+    font-size: 12pt;
+}
+
+.research-left img {
+    width: 100%;
+}
+
+.research-text-right {
+    padding: 0px 0px 0px 10px;
+    margin-left: 30%;
+}
+
+.research-text-left {
+    padding: 0px 10px 0px 0px;
+    margin-right: 30%;
+}
+
+
+#text {
+}
+
+#text h3 {
+    font-variant:small-caps;
+    margin: 20px 0px 0px 0px;
+    font-size: 20pt;
+}
+
+#clear {
+    clear: both;
+}
+
+#sidebar {
+  background-color: #000000;
+  float: left;
+  height: auto;
+  width: 15%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding: 0;
   color: white;
 }
 
-#content a { 
-  color: white;
-  font-size: 12pt
-  decoration: underline
-} 
-#content a:hover {
-  decoration: underline
-}
-#sidebar {
-  background-color: #829bcc;
-  float: right;
-  width: 250px;
-  margin-bottom: 20px;
-}
 #sidebar ul {
   list-style-type: none;
+  margin: 0;
+  padding: 10px 10px 5px 10px;
+  overflow: hidden;
 }
+
+#sidebar li {
+    border-top: 2px solid #FFFFFF;
+    padding: 5px 0px;
+    margin: 0;
+}
+
+#sidebar img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
 #sidebar a {
-  color: white;
   font-weight: bold;
   text-decoration: none;
   font-size: 10pt;
+}
+
+#footer {
+    clear:both;
+    background-color:#4a4a4a;
+    margin-top: 10px;
+    padding: 3px 0px 3px 20px;
+}
+
+#footer a{
+    color: white;
+    font-size: 12pt;
+}
+
+#footer a:hover{
+    color: blue;
+}
+
+#text table {
+    margin: 0px 0px 5px 0px;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#text tr {
+}
+
+#text td {
+}
+
+.event {
+    float:left;
+}
+
+.year {
+    float: right;
+}
+
+.explanation {
+    padding: 0px 0px 5px 20px;
+    font-size: 13pt;
+}
+
+.spacer {
+    height:5px;
+    background-color: black;
+}
+
+figure {
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    background-color: #669933;
+    display: block;
+}
+
+figcaption {
+    font-size: 12pt;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 1px;
+    color: white;
 }
