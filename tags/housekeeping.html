@@ -1,0 +1,12 @@
+---
+layout: default
+title: Posts tagged "housekeeping"
+---
+
+<div id="text"
+     {% for post in site.tags.housekeeping %}
+     <div class="item">
+	  <h3><a href="{{site.url/{{ post.url}}">{{post.date |date_to_string}}: {{post.title}}</a></h3>
+     </div>
+     {% endfor %}
+</div>
