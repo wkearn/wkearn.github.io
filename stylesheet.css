@@ -47,6 +47,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 #topblock {
     border:  none;
     margin: 20px;
@@ -266,6 +267,11 @@ body {
 
 .year {
     float: right;
+}
+
+.tag {
+    font-size: 10pt;
+    float: left;
 }
 
 .explanation {
