@@ -29,7 +29,7 @@ The model relies on the diffusion operator on periodic boundary conditions, whic
 Nice and easy, right? I basically turn the five-point stencil for the Laplacian into a matrix and then convolve that stencil with the matrix representing our domain. To handle the periodic boundaries, I pad that matrix with MATLAB's `padarray()` function so as to represent the periodic boundaries. I'm sure it's not the best way to do things, but it works.
 
 When I put the rest of the model into MATLAB with a real simple forward Euler scheme, I get something that looks like this:
-![MATLAB. R=1.0, dx=dy=5.0, dt = 0.1, other parameters as given in Rietkerk et al. 2002]({{site.baseurl}}/images/matlab.png)
+![MATLAB. R=1.0, dx=dy=5.0, dt = 0.1, other parameters as given in Rietkerk et al. 2002]({{site.url}}/images/matlab.png)
 
 Hey, hey! We've made [tiger bush](http://en.wikipedia.org/wiki/Tiger_bush), the spotted or banded pattern of vegetation common in arid regions.
 
@@ -37,7 +37,7 @@ Now we want to do the same thing in Julia (check out this [GitHub repository](ht
 
 If we crank the model, we get:
 
-![Julia. Same parameters as in the MATLAB version]({{site.baseurl}}/images/julia.png)
+![Julia. Same parameters as in the MATLAB version]({{site.url}}/images/julia.png)
 
 Looks pretty good. I still need to figure out the intricacies of gnuplot or plotting from Julia in general.
 

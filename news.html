@@ -6,7 +6,7 @@ title: News
 <div id="text">
   {% for post in site.posts %}
   <div class="item">
-    <h3><a href="{{site.baseurl}}{{ post.url }}">{{post.date | date_to_string}}: {{post.title}}</a></h3>  
+    <h3><a href="{{site.url}}{{ post.url }}">{{post.date | date_to_string}}: {{post.title}}</a></h3>  
   </div>
   {% endfor %}
 </div>
