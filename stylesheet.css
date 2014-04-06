@@ -305,6 +305,10 @@ figcaption {
     color: white;
 }
 
+#tag-cloud {
+    font-size: 10pt;
+}
+
 #tag-cloud a {
     font-size: 10pt;
 }
