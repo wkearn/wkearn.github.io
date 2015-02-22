@@ -2,7 +2,7 @@ name: Will Kearney
 description: Studies in ecogeomorphology
 url: http://people.bu.edu/wkearn
 
-pygments: true
+highlighter: pygments
 
 markdown: kramdown
 

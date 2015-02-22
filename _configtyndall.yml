@@ -2,7 +2,7 @@ name: Will Kearney
 description: Studies in ecogeomorphology
 url: http://www.wskearney.com
 
-pygments: true
+highlighter: pygments
 
 markdown: kramdown
 
