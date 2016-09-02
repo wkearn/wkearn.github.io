@@ -30,7 +30,7 @@ main = hakyll $ do
 
     match "publications/*.csl" $ do
       compile cslCompiler
-        
+
     match "assets/*" $ do
       route idRoute
       compile copyFileCompiler
@@ -41,11 +41,18 @@ main = hakyll $ do
         >>= relativizeUrls
 
     match "pages/publications.md" $ do
-                  route $ setExtension "html"
-                  compile $ myPandocBiblioCompiler
-                              "publications/nature.csl" "publications/publications.bib"
-                              >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
-                              >>= relativizeUrls
+      route $ setExtension "html"
+      compile $ myPandocBiblioCompiler
+        "publications/nature.csl" "publications/publications.bib"
+        >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
+        >>= relativizeUrls
+
+    match "pages/libraryofwetlandphysics.md" $ do
+      route $ setExtension "html"
+      compile $ myPandocBiblioCompiler
+        "publications/nature.csl" "publications/libraryofwetlandphysics.bib"
+        >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
+        >>= relativizeUrls
           
     match "pages/*" $ do
         route   $ setExtension "html"
