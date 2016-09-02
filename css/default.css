@@ -26,9 +26,9 @@ div#logo a {
 }
 
 div#header #navigation {
+    margin-top: 10px;
     width: 74%;
-    display: none;
-    text-align: right;
+    display: block;
     font-size: 0;
 }
 
@@ -104,11 +104,19 @@ p.caption {
     font-size: 0px;
 }
 
-.level2 {
-    padding: 0px 5px 0px 5px;
+.level3.right {
+    padding: 0px 5px 0px 10px;
     font-size: 16px;
     vertical-align: top;
-    width: 470px;
+    width: 465px;
+    display: block;
+}
+
+.level3.left {
+    padding: 0px 10px 0px 5px;
+    font-size: 16px;
+    vertical-align: top;
+    width: 465px;
     display: block;
 }
 
@@ -123,9 +131,14 @@ p.caption {
     
     div#header #navigation {
 	display: inline-block;
+	text-align: right;
     }
     
-    .level2 {
+    .level3.right {
+	display: inline-block;
+    }
+
+    .level3.left {
 	display: inline-block;
     }
 }
