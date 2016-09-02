@@ -15,6 +15,8 @@ title: Personal
 ## Friends
 
 - [Madeline Zehnder](https://madelinezehnder.wordpress.com)
+- [Chris Holden](http://ceholden.github.io)
+- [Alexey Shiklomanov](http://ashiklom.github.io)
 
 ## Links
 
