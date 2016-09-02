@@ -1,19 +1,13 @@
----
-layout: pages
-title: Home
----
+<div style="font-size: 0">
+<div id="hometext">
+  $homebody$
+  
+  <h2>Posts</h2>
+  $partial("templates/post-list.html")$
 
-<div class="profile">
-  <img src="{{site.url}}/images/profile.jpg" title="Sometimes I look like a real geologist" alt="Sometimes I look like a real geologist">
+  <p>You can find more in the <a href="/archive.html">archives</a> or subscribe via <a href="/rss.xml">RSS</a>.</p>
 </div>
-<div class="profile-text">
-  <p>
-    I am a PhD student in the <a href="http://www.bu.edu/earth/">Department of Earth and Environment</a> at Boston University. I work with <a href="http://www.bu.edu/earth/people/faculty/sergio-fagherazzi/">Sergio Fagherazzi</a> on coastal ecogeomorphology, the study of the interactions between biology and coastal landscapes. I apply a combination of field work, remote sensing, and numerical modeling to solve problems ranging from tidal network geometry to ecological succession. 
-  </p>
-  <p>
-    Check out my <a href="{{site.url}}/research.html">research</a> for more about what I do or my <a href="{{site.url}}/CV.html">CV</a> for more about me.
-  </p>
-  <p> More timely updates can be found on my <a href="{{site.url}}/news.html">news</a> page.
-  </p>
+<div id="homeimage" class="figure">
+  <img src="/images/marsh.jpg" width="100%"/>
 </div>
-
+</div>
