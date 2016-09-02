@@ -100,6 +100,9 @@
     </layout>
   </citation>
   <bibliography et-al-min="6" et-al-use-first="1" second-field-align="flush" entry-spacing="0" line-spacing="2">
+    <sort>
+      <key macro="issuance"/>
+    </sort>
     <layout>
       <text variable="citation-number" suffix="."/>
       <group delimiter=" ">
