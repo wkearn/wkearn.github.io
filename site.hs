@@ -4,6 +4,10 @@ import           Data.Monoid (mappend)
 import           Hakyll
 import           Text.Pandoc.Options
 import           Control.Monad (liftM)
+import           Data.Time.Clock               (UTCTime (..))
+import           Data.Time.Format              (formatTime)
+import qualified Data.Time.Format              as TF
+import           Data.Time.Locale.Compat       (TimeLocale, defaultTimeLocale)
 
 
 --------------------------------------------------------------------------------
@@ -13,6 +17,7 @@ baseurl = "http://localhost:8000"
 myDefaultContext :: Context String
 myDefaultContext = constField "baseurl" baseurl `mappend`
                    constField "rssurl" (baseurl++"/rss.xml") `mappend`
+                   getDefaultTime `mappend`
                    defaultContext
                    
 main :: IO ()
@@ -131,3 +136,8 @@ myPandocBiblioCompiler cslFileName bibFileName = do
   bib <- load $ fromFilePath bibFileName
   liftM (writePandocWith defaultHakyllWriterOptions { writerSectionDivs = True })
     (getResourceString >>= readPandocBiblio def csl bib)
+
+getDefaultTime :: Context a
+getDefaultTime = field "updated" $ \i -> do
+  mtime <- getItemModificationTime "timestamp"
+  return $ formatTime defaultTimeLocale "%Y-%m-%d" mtime

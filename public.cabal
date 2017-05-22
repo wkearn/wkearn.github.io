@@ -8,5 +8,7 @@ executable site
   build-depends:    base == 4.*
                   , hakyll == 4.8.*
                   , pandoc
+                  , time
+                  , time-locale-compat
   ghc-options:      -threaded
   default-language: Haskell2010
