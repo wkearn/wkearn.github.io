@@ -21,7 +21,7 @@ myDefaultContext = constField "baseurl" baseurl `mappend`
                    defaultContext
                    
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith myConfiguration $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -116,6 +116,9 @@ main = hakyll $ do
                  loadAllSnapshots "posts/*" "content"
         renderRss myFeedConfiguration feedCtx posts
 --------------------------------------------------------------------------------
+myConfiguration :: Configuration
+myConfiguration = defaultConfiguration { deployCommand = "deploy" }
+
 postCtx :: Context String
 postCtx =
   dateField "date" "%B %e, %Y" `mappend`
