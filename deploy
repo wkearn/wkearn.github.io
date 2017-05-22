@@ -14,7 +14,13 @@ stack exec site build
 git fetch --all
 git checkout master
 
-cp -a _site/ .
+rsync -a --filter='P _site/'      \
+         --filter='P _cache/'     \
+         --filter='P .git/'       \
+         --filter='P .gitignore'  \
+         --filter='P .stack-work' \
+         --delete-excluded        \
+         _site/ .
 
 git add -A
 DATE=`date +%Y-%m-%d\ %H:%M:%S`
