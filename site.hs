@@ -117,7 +117,7 @@ main = hakyllWith myConfiguration $ do
         renderRss myFeedConfiguration feedCtx posts
 --------------------------------------------------------------------------------
 myConfiguration :: Configuration
-myConfiguration = defaultConfiguration { deployCommand = "deploy" }
+myConfiguration = defaultConfiguration { deployCommand = "./deploy" }
 
 postCtx :: Context String
 postCtx =
