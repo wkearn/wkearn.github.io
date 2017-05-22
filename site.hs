@@ -140,4 +140,4 @@ myPandocBiblioCompiler cslFileName bibFileName = do
 getDefaultTime :: Context a
 getDefaultTime = field "updated" $ \i -> do
   mtime <- getItemModificationTime "timestamp"
-  return $ formatTime defaultTimeLocale "%Y-%m-%d" mtime
+  return $ formatTime defaultTimeLocale "%Y-%m-%d %R" mtime
