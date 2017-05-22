@@ -5,3 +5,5 @@ assets
 images
 sandbox
 _drafts
+timestamp
+deploy.sh
