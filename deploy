@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Deploy script for wkearn.github.io
+
+touch timestamp
+
+git stash
+
+git checkout develop
+
+stack exec site clean
+stack exec site build
+
+git fetch --all
+git checkout master
+
+cp -a _site/ .
+
+git add -A
+DATE=`date +%Y-%m-%d\ %H:%M:%S`
+git commit -m "Publish $DATE"
+
+git push gh-pages master
+
+git checkout develop
+git stash pop
