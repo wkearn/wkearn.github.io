@@ -26,7 +26,7 @@ git add -A
 DATE=`date +%Y-%m-%d\ %H:%M:%S`
 git commit -m "Publish $DATE"
 
-git push gh-pages master
+git push origin master
 
 git checkout develop
 git stash pop
