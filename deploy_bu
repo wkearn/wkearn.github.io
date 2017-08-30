@@ -12,3 +12,6 @@ stack exec site clean
 stack exec site build
 
 lftp -c "open sftp://wkearn@people.bu.edu; mirror -R _site ."
+
+git checkout develop
+git stash pop
