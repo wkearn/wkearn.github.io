@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Deploy script for people.bu.edu
+
+touch timestamp
+
+git stash
+
+git checkout bu
+
+stack exec site clean
+stack exec site build
+
+lftp -c "open sftp://wkearn@people.bu.edu; mirror -R _site ."
