@@ -15,8 +15,7 @@ baseurl :: String
 baseurl = "http://localhost:8000"
 
 myDefaultContext :: Context String
-myDefaultContext = constField "baseurl" baseurl `mappend`
-                   constField "rssurl" (baseurl++"/rss.xml") `mappend`
+myDefaultContext = constField "rssurl" (baseurl++"/rss.xml") `mappend`
                    getDefaultTime `mappend`
                    defaultContext
                    
