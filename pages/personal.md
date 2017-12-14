@@ -6,7 +6,7 @@ title: Personal
 ## Groups
 
 - [BU Study Group](http://study.bu.edu)
-- [The Boston Open Researcher Group)(https://boston-open-researcher-group.github.io/BORG/)
+- [The Boston Open Researcher Group](https://boston-open-researcher-group.github.io/BORG/)
 
 ## Projects
 
