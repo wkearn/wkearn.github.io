@@ -10,7 +10,7 @@ rssurl: /researchfeed.xml
 
 ### {.left}
 
-An example of a one month long record of stage (water level) and discharge (water flow) from a salt marsh creek is shown in the figure. There is clearly some complex structure in this relationship. It varies over time as the tides run through their spring-neap cycle. But there seems to be a pattern the way the discharge bends as the tide rises and falls. This behavior reflects the flow processes going on in the marsh.
+An example of a one month long record of stage (water level) and discharge (water flow) from a salt marsh creek is shown in the figure. There is clearly some complex structure in this relationship. It varies over time as the tides run through their spring-neap cycle. But there seems to be a pattern in the way the discharge bends as the tide rises and falls. This behavior reflects the flow processes going on in the marsh.
 
 #### Questions
 
