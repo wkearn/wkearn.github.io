@@ -114,6 +114,11 @@ main = hakyllWith myConfiguration $ do
         posts <- fmap (take 10) . recentFirst =<<
                  loadAllSnapshots "posts/*" "content"
         renderRss myFeedConfiguration feedCtx posts
+
+    match "CNAME" $ do
+      route idRoute
+      compile copyFileCompiler
+        
 --------------------------------------------------------------------------------
 myConfiguration :: Configuration
 myConfiguration = defaultConfiguration { deployCommand = "./deploy" }
