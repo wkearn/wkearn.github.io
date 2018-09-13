@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Will Kearney" />
+  <meta name="date" content="2018-09-13" />
+  <title>Data-driven modeling of lateral fluxes in salt marsh channels</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage bigger">
+  <h1 class="title">Data-driven modeling of lateral fluxes in salt marsh channels</h1>
+  <p class="author">
+Will Kearney
+  </p>
+  <p class="date">September 13, 2018</p>
+</div>
+<div id="plum-island" class="slide section level1">
+<h1>Plum Island</h1>
+<p><img src="figures/plum_island.jpg" style="width:75.0%" /></p>
+</div>
+<div id="tide" class="slide section level1">
+<h1>TIDE</h1>
+<p><img src="figures/tank.jpg" style="width:75.0%" /></p>
+</div>
+<div id="problem" class="slide section level1">
+<h1>Problem</h1>
+<div class="bigger">
+<ul>
+<li>Given a time series of water levels, estimate the discharge in the creek at each time step.</li>
+</ul>
+</div>
+<p><img src="figures/stage2discharge.svg" style="width:60.0%" /></p>
+</div>
+<div id="stage-discharge-relationships" class="slide section level1">
+<h1>Stage-discharge relationships</h1>
+<p><img src="figures/fingerprint.svg" style="width:60.0%" /></p>
+</div>
+<div id="a-simple-model-for-stage-and-discharge" class="slide section level1">
+<h1>A simple model for stage and discharge</h1>
+<p><img src="figures/boonModel.svg" style="width:75.0%" /></p>
+</div>
+<div id="a-simple-model-for-stage-and-discharge-1" class="slide section level1">
+<h1>A simple model for stage and discharge</h1>
+<p><img src="figures/boonModel2.svg" style="width:75.0%" /></p>
+</div>
+<div id="a-simple-model-for-stage-and-discharge-2" class="slide section level1">
+<h1>A simple model for stage and discharge</h1>
+<p><span class="math display">\[
+\huge Q(t) = \frac{dV}{dt} = A(\eta)\frac{d\eta}{dt}
+\]</span></p>
+<div class="incremental">
+<p><img src="figures/new_boon_fingerprint.svg" style="width:49.0%" /> <img src="figures/new_boon_performance.svg" style="width:49.0%" /></p>
+</div>
+</div>
+<div id="embedding-the-time-series" class="slide section level1">
+<h1>Embedding the time series</h1>
+<p><img src="figures/operators1.svg" style="width:70.0%" /></p>
+</div>
+<div id="embedding-the-time-series-1" class="slide section level1">
+<h1>Embedding the time series</h1>
+<p><img src="figures/operators2.svg" style="width:70.0%" /></p>
+</div>
+<div id="embedding-the-time-series-2" class="slide section level1">
+<h1>Embedding the time series</h1>
+<p><img src="figures/operators3.svg" style="width:70.0%" /></p>
+</div>
+<div id="embedding-the-time-series-3" class="slide section level1">
+<h1>Embedding the time series</h1>
+<p><img src="figures/operators4.svg" style="width:70.0%" /></p>
+</div>
+<div id="embedding-the-time-series-4" class="slide section level1">
+<h1>Embedding the time series</h1>
+<p><img src="figures/operators5.svg" style="width:70.0%" /></p>
+</div>
+<div id="embedding-the-time-series-5" class="slide section level1">
+<h1>Embedding the time series</h1>
+<p><img src="figures/operators6.svg" style="width:70.0%" /></p>
+</div>
+<div id="volterra-series-model" class="slide section level1">
+<h1>Volterra series model</h1>
+<div class="bigger">
+<p><span class="math display">\[
+Q(t) = \beta_0 + \int_0^\infty \eta(t-\tau_1) \beta_1(\tau_1)\ d\tau_1 + \int_0^\infty \int_0^\infty \eta(t-\tau_1)\eta(t-\tau_2) \beta_2(\tau_1,\tau_2)\ d\tau_1d\tau_2 + \dots
+\]</span></p>
+</div>
+<p><img src="figures/new_volterra_fingerprint.svg" style="width:49.0%" /> <img src="figures/new_volterra_performance.svg" style="width:49.0%" /></p>
+</div>
+<div id="the-ungauged-channel-problem" class="slide section level1">
+<h1>The ungauged channel problem</h1>
+<p><img src="figures/pie_sites.png" style="width:75.0%" /></p>
+</div>
+<div id="the-ungauged-channel-problem-1" class="slide section level1">
+<h1>The ungauged channel problem</h1>
+<p><img src="figures/fingerprints.png" style="width:60.0%" /></p>
+</div>
+<div id="revisiting-the-fingerprint" class="slide section level1">
+<h1>Revisiting the fingerprint</h1>
+<p><img src="figures/fingerprint.svg" style="width:60.0%" /></p>
+</div>
+<div id="a-state-space-model-for-stage-and-discharge" class="slide section level1">
+<h1>A state-space model for stage and discharge</h1>
+<p>Start with the shallow water equations</p>
+<div class="bigger">
+<p><span class="math display">\[\begin{eqnarray}
+\frac{\partial H}{\partial t} + \frac{\partial}{\partial x_i} Hu_i &amp;=&amp; 0\\
+\frac{\partial}{\partial t} Hu_i +\frac{\partial}{\partial x_j} Hu_i u_j  &amp;=&amp; -gH\frac{\partial \eta}{\partial x_i} - \frac{gn^2u_i|\mathbf{u}|}{H^{1/3}}
+\end{eqnarray}\]</span></p>
+</div>
+<p>Let <span class="math inline">\(x_t = \begin{bmatrix} H(r,t) \\ \mathbf{u}(r,t)\end{bmatrix}\)</span> and then define an operator <span class="math inline">\(A_{\theta}[\cdot]\)</span> that propagates this vector ahead in time via the solution of the shallow water equations. Note the presence of parameters, <span class="math inline">\(\theta\)</span>, which include the bathymetry, friction coeffcients, boundary conditions, etc.</p>
+<div class="bigger">
+<p><span class="math display">\[\begin{eqnarray}
+x_{t+1} &amp;=&amp; A_\theta[x_t] + \varepsilon_t \\
+y_{t} &amp;=&amp; H(r_0,t) + \zeta_t = B_\theta[x_t] + \zeta_t \\
+z_{t} &amp;=&amp; Q(r_0,t) + \xi_t = C_\theta[x_t] + \xi_t
+\end{eqnarray}\]</span></p>
+</div>
+</div>
+<div id="use-a-recurrent-neural-network-to-learn-a_theta-from-the-data" class="slide section level1">
+<h1>Use a recurrent neural network to learn <span class="math inline">\(A_{\theta}\)</span> from the data</h1>
+<p><img src="figures/deephq.svg" style="width:30.0%" /> <img src="figures/hqnn_fingerprint.svg" style="width:60.0%" /></p>
+</div>
+<div id="whats-next-the-momentum-budget" class="slide section level1">
+<h1>What’s next? The momentum budget</h1>
+<p><img src="figures/boonModel2.svg" style="width:75.0%" /></p>
+</div>
+<div id="the-momentum-budget" class="slide section level1">
+<h1>The momentum budget</h1>
+<p><img src="figures/nidziekoModel.svg" style="width:75.0%" /></p>
+</div>
+<div id="the-momentum-budget-1" class="slide section level1">
+<h1>The momentum budget</h1>
+<div class="bigger">
+<ul>
+<li>Can we relate the rate at which energy is extracted from the flow to the stage-discharge relationship?</li>
+</ul>
+</div>
+<p><img src="figures/nidziekoModel.svg" style="width:75.0%" /></p>
+</div>
+<div id="even-further" class="slide section level1">
+<h1>Even further</h1>
+<p><img src="figures/big_deephq.svg" style="width:100.0%" /></p>
+</div>
+</body>
+</html>
