@@ -35,7 +35,7 @@ main = hakyllWith myConfiguration $ do
     match "publications/*.csl" $ do
       compile cslCompiler
 
-    match "assets/*" $ do
+    match "assets/**" $ do
       route idRoute
       compile copyFileCompiler
 
