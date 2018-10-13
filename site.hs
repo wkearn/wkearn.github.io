@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Text.Pandoc
 import           Text.Pandoc.Options
 import           Control.Monad (liftM)
 import           Data.Time.Clock               (UTCTime (..))
@@ -35,6 +36,9 @@ main = hakyllWith myConfiguration $ do
     match "publications/*.csl" $ do
       compile cslCompiler
 
+    match "cv/*" $ do
+      compile getResourceString
+              
     match "assets/**" $ do
       route idRoute
       compile copyFileCompiler
@@ -44,6 +48,17 @@ main = hakyllWith myConfiguration $ do
       compile $ pandocCompiler
         >>= relativizeUrls
 
+    create ["pages/CV.md"] $ do
+      compile $ pandocCVCompiler "cv/template.md" "cv/cv.yaml"
+
+    create ["pages/CV.html"] $ do
+      route $ idRoute
+      compile $ load "pages/CV.md"
+                  >>= renderPandoc                  
+                  >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
+                  >>= relativizeUrls
+                  >>= makeItem . itemBody
+              
     match "pages/publications.md" $ do
       route $ setExtension "html"
       compile $ myPandocBiblioCompiler
@@ -63,7 +78,7 @@ main = hakyllWith myConfiguration $ do
         compile $ pandocCompilerWith defaultHakyllReaderOptions defaultHakyllWriterOptions { writerSectionDivs = True}
           >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
           >>= relativizeUrls
-        
+
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -143,6 +158,18 @@ myPandocBiblioCompiler cslFileName bibFileName = do
   bib <- load $ fromFilePath bibFileName
   liftM (writePandocWith defaultHakyllWriterOptions { writerSectionDivs = True })
     (getResourceString >>= readPandocBiblio def csl bib)
+
+pandocCVCompiler :: String -> String -> Compiler (Item String)
+pandocCVCompiler templateFileName databaseFileName = do
+  template <- loadBody $ fromFilePath templateFileName
+  database <- loadBody $ fromFilePath databaseFileName
+  makeItem $ pandocCVToMarkdown database template
+  
+pandocCVToMarkdown :: String -> String -> String
+pandocCVToMarkdown database template = writeMarkdown defaultHakyllWriterOptions { writerTemplate = Just template } pd
+    where pd = case readMarkdown defaultHakyllReaderOptions database of
+                 Left x -> error "CV Database Markdown error"
+                 Right x -> x
 
 getDefaultTime :: Context a
 getDefaultTime = field "updated" $ \i -> do
