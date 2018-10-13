@@ -1,4 +1,4 @@
-For a PDF version, [click here](assets/cv.pdf)
+For a PDF version, [click here](../assets/cv.pdf)
 
 $if(education)$
 # Education
@@ -26,7 +26,7 @@ $endif$
 
 # Publications 
 
-For a complete list of publications, [click here](pages/publications.html)
+For a complete list of publications, [click here](../pages/publications.html)
 
 $if(teaching)$
 # Teaching
