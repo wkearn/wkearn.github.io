@@ -79,9 +79,9 @@ main = hakyllWith myConfiguration $ do
           >>= loadAndApplyTemplate "templates/default.html" myDefaultContext
           >>= relativizeUrls
 
-    match "posts/*" $ do
+    match "posts/*.md" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ myPandocBiblioCompiler "publications/nature.csl" "publications/library.bib"
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -156,7 +156,7 @@ myPandocBiblioCompiler :: String -> String -> Compiler (Item String)
 myPandocBiblioCompiler cslFileName bibFileName = do
   csl <- load $ fromFilePath cslFileName
   bib <- load $ fromFilePath bibFileName
-  liftM (writePandocWith defaultHakyllWriterOptions { writerSectionDivs = True })
+  liftM (writePandocWith defaultHakyllWriterOptions { writerSectionDivs = True, writerHTMLMathMethod = MathJax "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" })
     (getResourceString >>= readPandocBiblio def csl bib)
 
 pandocCVCompiler :: String -> String -> Compiler (Item String)
