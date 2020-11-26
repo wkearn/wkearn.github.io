@@ -5,3 +5,4 @@ sandbox
 _drafts
 timestamp
 deploy.sh
+stack.yaml.lock
