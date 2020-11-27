@@ -133,7 +133,7 @@ teaching:
     institution: Boston University, Department of Earth and Environment
     role: Teaching fellow
 funding:
-  - years: 2019-2020
+  - years: 2020-2020
     grantname: NRL/ASEE Postdoctoral Fellowship
     institution: American Society of Engineering Education
     amount: $83,938
@@ -154,16 +154,16 @@ mentorship:
       year: 2017
       program: Mozilla Open Leaders Cohort
 service:
-  - years: 2017--2018
+  - years: 2017-2018
     position: Natural Sciences Curriculum Committee, Graduate Student Representative
     institution: College of Arts and Sciences, Boston University    
-  - years: 2016--2017
+  - years: 2016-2017
     position: Graduate Academic Affairs Committee, Graduate Student Representative
     institution: College of Arts and Sciences, Boston University
-  - years: 2015--2016
+  - years: 2015-2016
     position: Academic Policy Commitee, Graduate Student Representative
     institution: College of Arts and Sciences, Boston University
-  - years: 2015--2017
+  - years: 2015-2017
     position: Graduate Student Representative
     institution: Department of Earth and Environment, Boston University
 reviews:      
