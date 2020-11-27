@@ -15,12 +15,12 @@ citizenship: United States citizen
 selective-service: Registered for Selective Service
 education:
   - years: 2018
-    degree: Ph.D.
+    degree: PhD
     institution: Boston University
     city: Boston, MA
-    description: "Earth Sciences, Dissertation: Signals of nonlinear, multiscale and stochastic processes in coastal landscapes"
+    description: Earth Sciences
   - years: 2013
-    degree: B.A.
+    degree: BA
     institution: University of Pennsylvania
     city: Philadelphia, PA
     description: Science, Technology & Society and Earth Science
